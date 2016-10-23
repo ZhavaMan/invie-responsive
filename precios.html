@@ -111,6 +111,7 @@
 				</form>
 			</div>
 		</footer>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.0/blazy.min.js"></script>
 		<script type="text/javascript">
 			var $burgerButton = document.getElementById("burger-button");
@@ -124,6 +125,16 @@
 				$burgerButton.classList.toggle('icon-close');
 			}
 
+			function showToggle() {
+				$menu.classList.add('active');
+				$burgerButton.classList.add('icon-close');
+			}
+
+			function hideToggle() {
+				$menu.classList.remove('active');
+				$burgerButton.classList.remove('icon-close');
+			}
+
 			function mediaQuery() {
 				if (x.matches) {
 					console.log("Se cumplió");
@@ -135,10 +146,20 @@
 
 				}
 			}
+
 			//Be Lazy
 			var bLazy = new Blazy({
 			    selector: 'img'
 			});
+
+			//HammerJS: Gestos
+			var $body = document.body;
+
+			var gestos = new Hammer($body);
+			
+			gestos.on('swiperight', showToggle);
+
+			gestos.on('swipeleft', hideToggle);
 		</script>
 	</body>
 </html>
