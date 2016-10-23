@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Precios</title>
+		<link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/invie.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<div class="portada">
+			<header id="header" class="contenedor">
+				<figure class="logotipo">
+					<img src="images/invie.png" srcset="images/invie.png 1x, images/invie2x.png 2x" width="186" height="60" alt="Invie Logotipo" />
+				</figure>
+				<span class="burger-button icon-menu" id="burger-button"></span>
+				<nav class="menu" id="menu">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="index.html#guitarras">Guitarras</a></li>
+						<li><a href="precios.html">Precios</a></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+		<section class="tabla">
+			<div class="contenedor">
+				<table>
+					<thead>
+						<tr>
+							<th>Modelo</th>
+							<th>Precio</th>
+							<th>Descripción</th>
+							<th>Modelo</th>
+							<th>Precio</th>
+							<th>Descripción</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Invie Classic</td>
+							<td>$1000.00</td>
+							<td>La mejor guitarra ever and never</td>
+							<td>Invie Classic</td>
+							<td>$1000.00</td>
+							<td>La mejor guitarra ever and never</td>
+						</tr>
+						<tr>
+							<td>Invie Classic</td>
+							<td>$1000.00</td>
+							<td>La mejor guitarra ever and never</td>
+							<td>Invie Classic</td>
+							<td>$1000.00</td>
+							<td>La mejor guitarra ever and never</td>
+						</tr>
+						<tr>
+							<td>Invie Classic</td>
+							<td>$1000.00</td>
+							<td>La mejor guitarra ever and never</td>
+							<td>Invie Classic</td>
+							<td>$1000.00</td>
+							<td>La mejor guitarra ever and never</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="contenedor">
+				<div class="contacto">
+					<img data-src="images/invie-white.png|images/invie-white2x.png" alt="Invie Logotipo" />
+					<a href="tel:+5215531947086"><strong>Telefono</strong><span>(+52) 1 55 3194 7086</span></a>
+					<a href="mailto:contacto@invie.com"><strong>E-mail</strong><span>contacto@invie.com</span></a>
+				</div>
+				<form class="formulario">
+					<div class="column-1">
+						<label for="name">Nombre</label>
+						<input type="text" require id="name"/>
+
+						<label for="email">E-mail</label>
+						<input type="email" require id="email"/>
+						<div class="sexo">
+							<label for="hombre">
+								<input type="radio" id="hombre" name="sexo" value="hombre" checked />Hombre
+							</label>
+							<label for="mujer">
+								<input type="radio" id="mujer" name="sexo" value="mujer" />Mujer
+							</label>
+						</div>
+						<div class="intereses">
+							<label for="cotizacion">
+								<input type="checkbox" id="cotizacion" name="intereses" value="cotizacion" checked />Cotización
+							</label>
+							<label for="reclamos">
+								<input type="checkbox" id="reclamos" name="intereses" value="reclamos" />Reclamos
+							</label>
+							<label for="comentarios">
+								<input type="checkbox" id="comentarios" name="intereses" value="comentarios" />Comentarios
+							</label>
+							<label for="otros">
+								<input type="checkbox" id="otros" name="intereses" value="otros" />Otros
+							</label>
+						</div>
+					</div>
+					<div class="column-2">
+						<label>Comentarios</label>
+						<textarea id="comentarios" name="comentarios" cols="30" rows="5"></textarea>
+						<input type="submit" class="button"/>
+					</div>
+				</form>
+			</div>
+		</footer>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.0/blazy.min.js"></script>
+		<script type="text/javascript">
+			var $burgerButton = document.getElementById("burger-button");
+			var $menu = document.getElementById("menu");
+			x = window.matchMedia("(max-width: 500px)");
+			x.addListener(mediaQuery);
+			mediaQuery();
+
+			function menuToggle() {
+				$menu.classList.toggle('active');
+				$burgerButton.classList.toggle('icon-close');
+			}
+
+			function mediaQuery() {
+				if (x.matches) {
+					console.log("Se cumplió");
+					$burgerButton.addEventListener('touchstart', menuToggle);
+
+				} else {
+					console.log("No se cumplió");
+					$burgerButton.removeEventListener('touchstart', menuToggle);
+
+				}
+			}
+			//Be Lazy
+			var bLazy = new Blazy({
+			    selector: 'img'
+			});
+		</script>
+	</body>
+</html>
