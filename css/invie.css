@@ -356,6 +356,10 @@ input:focus, textarea:focus {
 		width: 360px;
 	}
 
+	.formulario label {
+		display: block;
+	}
+
 	input[type="text"], input[type="email"] {
 		font-size: 16px;
 		padding: 5px;
